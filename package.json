@@ -1,0 +1,199 @@
+{
+  "name": "gonotes",
+  "displayName": "gonotes",
+  "description": "Extensi pencatatan untuk VSCode",
+  "version": "0.0.1",
+  "publisher": "alhifnywahid",
+  "license": "CC-BY-NC-4.0",
+  "keywords": [
+    "notes",
+    "markdown",
+    "notes markdown",
+    "note"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alhifnywahid/gonotes"
+  },
+  "homepage": "https://github.com/dionmunk/gonotes#readme",
+  "bugs": {
+    "url": "https://github.com/dionmunk/vscode-notes/issues"
+  },
+  "icon": "resources/icon.png",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "GoNotes.selectLocation",
+        "title": "GONOTES: Pilih Lokasi Penyimpanan",
+        "icon": {
+          "dark": "resources/setup-light.svg",
+          "light": "resources/setup-dark.svg"
+        }
+      },
+      {
+        "command": "GoNotes.newFolder",
+        "title": "GONOTES: Folder Baru",
+        "icon": {
+          "dark": "resources/newFolder-light.svg",
+          "light": "resources/newFolder-dark.svg"
+        }
+      },
+      {
+        "command": "GoNotes.refresh",
+        "title": "GONOTES: Refresh",
+        "icon": {
+          "dark": "resources/refresh-light.svg",
+          "light": "resources/refresh-dark.svg"
+        }
+      },
+      {
+        "command": "GoNotes.rename",
+        "title": "GONOTES: Ubah nama",
+        "icon": {
+          "dark": "resources/rename-light.svg",
+          "light": "resources/rename-dark.svg"
+        }
+      },
+      {
+        "command": "GoNotes.trash",
+        "title": "GONOTES: Hapus",
+        "icon": {
+          "dark": "resources/trash-light.svg",
+          "light": "resources/trash-dark.svg"
+        }
+      },
+      {
+        "command": "GoNotes.editNote",
+        "title": "GONOTES: Edit Catatan",
+        "icon": {
+          "dark": "resources/edit-light.svg",
+          "light": "resources/edit-dark.svg"
+        }
+      },
+      {
+        "command": "GoNotes.openFolder",
+        "title": "GONOTES: Hapus",
+        "icon": {
+          "dark": "resources/trash-light.svg",
+          "light": "resources/trash-dark.svg"
+        }
+      },
+      {
+        "command": "GoNotes.newNotes",
+        "title": "GONOTES: Catatan Baru",
+        "icon": {
+          "dark": "resources/newNote-light.svg",
+          "light": "resources/newNote-dark.svg"
+        }
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "GoNotes.selectLocation",
+          "when": "view == gonotes",
+          "group": "navigation@1"
+        },
+        {
+          "command": "GoNotes.newFolder",
+          "when": "view == gonotes",
+          "group": "navigation@2"
+        },
+        {
+          "command": "GoNotes.refresh",
+          "when": "view == gonotes",
+          "group": "navigation@3"
+        },
+        {
+          "command": "GoNotes.newNotes",
+          "when": "view == gonotes",
+          "group": "navigation@4"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "GoNotes.editNote",
+          "when": "view == gonotes && viewItem == note",
+          "group": "inline@1"
+        },
+        {
+          "command": "GoNotes.rename",
+          "when": "view == gonotes && viewItem == note",
+          "group": "inline@2"
+        },
+        {
+          "command": "GoNotes.trash",
+          "when": "view == gonotes && viewItem == note",
+          "group": "inline@3"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "gonotes",
+        "contents": "Silahkan tentukan lokasi terlebih dahulu untuk meyimpan catatan.\n[Pilih Lokasi](command:GoNotes.selectLocation)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gonotes-ext",
+          "title": "GONOTES",
+          "icon": "resources/icon-dark.svg"
+        }
+      ]
+    },
+    "views": {
+      "gonotes-ext": [
+        {
+          "id": "gonotes",
+          "name": "GONOTES"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Configurasi",
+      "properties": {
+        "GoNotes.notesLocation": {
+          "type": "string",
+          "default": "",
+          "description": "Lokasi penyimpanan untuk catatan."
+        },
+        "GoNotes.notesDefaultNoteExtension": {
+          "type": "string",
+          "default": "md",
+          "description": "Ekstensi default yang digunakan untuk catatan baru. (jangan sertakan titik)"
+        },
+        "GoNotes.notesExtensions": {
+          "type": "string",
+          "default": "md,markdown,txt",
+          "description": "Daftar ekstensi yang diizinkan untuk catatan yang dipisahkan dengan koma. (jangan sertakan titik atau spasi)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.92.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {}
+}
