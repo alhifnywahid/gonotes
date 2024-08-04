@@ -1,67 +1,62 @@
-# gonotes README
+# GoNotes
 
-Ini adalah README untuk ekstensi Anda "gonotes". Setelah menulis deskripsi singkat, kami sarankan untuk menyertakan bagian berikut ini.
+
+
+
+**GoNotes** adalah sebuah ekstensi pencatatan untuk VSCode. Dengan GoNotes, Anda dapat membuat, mengedit, menghapus, dan mengelola catatan langsung dari dalam VSCode.
+
+## Priview
+
+<img alt="Go Notes Priview" align="center" width="100%" src="https://raw.githubusercontent.com/alhifnywahid/dummy/master/gonotes-video.gif" />
 
 ## Fitur
 
-Jelaskan fitur-fitur spesifik dari ekstensi Anda, termasuk tangkapan layar dari ekstensi Anda yang sedang bekerja. Jalur gambar bersifat relatif terhadap berkas README ini.
+- **Pilih Lokasi Penyimpanan**: Tentukan lokasi penyimpanan untuk semua catatan Anda.
+- **Folder Baru**: Buat folder baru untuk mengorganisir catatan Anda.
+- **Refresh**: Segarkan tampilan catatan Anda.
+- **Ubah Nama**: Ubah nama catatan atau folder.
+- **Hapus**: Hapus catatan atau folder yang tidak diperlukan lagi.
+- **Edit Catatan**: Buka dan edit catatan langsung di VSCode.
+- **Catatan Baru**: Buat catatan baru dengan ekstensi default yang dapat dikonfigurasi.
 
-Misalnya jika ada subfolder gambar di bawah ruang kerja proyek ekstensi Anda:
+## Instalasi
 
-\!\[fitur X\]\(gambar/fitur-x.png\)
+1. Buka VSCode.
+2. Pergi ke Extensions (`Ctrl+Shift+X`).
+3. Cari "GoNotes".
+4. Klik "Install".
 
-> Tip: Banyak ekstensi populer yang menggunakan animasi. Ini adalah cara yang sangat baik untuk memamerkan ekstensi Anda! Kami merekomendasikan animasi pendek dan terfokus yang mudah diikuti.
+## Penggunaan
 
-## Persyaratan
+1. **Pilih Lokasi Penyimpanan**:
+   - Klik pada ikon GoNotes di Activity Bar.
+   - Klik "Pilih Lokasi Penyimpanan".
+   - Pilih folder tempat Anda ingin menyimpan catatan.
 
-Jika Anda memiliki persyaratan atau ketergantungan, tambahkan bagian yang menjelaskan persyaratan tersebut dan cara memasang serta mengonfigurasinya.
+2. **Buat Folder Baru**:
+   - Klik kanan di dalam tampilan GoNotes.
+   - Pilih "Folder Baru".
+   - Masukkan nama folder.
 
-## Pengaturan Ekstensi
+3. **Buat Catatan Baru**:
+   - Klik kanan di dalam tampilan GoNotes.
+   - Pilih "Catatan Baru".
+   - Masukkan nama catatan.
 
-Cantumkan jika ekstensi Anda menambahkan pengaturan Kode VS melalui titik ekstensi `contributes.configuration`.
+4. **Edit Catatan**:
+   - Klik dua kali pada catatan untuk membukanya di editor.
 
-Sebagai contoh:
+5. **Hapus Catatan**:
+   - Klik kanan pada catatan.
+   - Pilih "Hapus".
 
-Ekstensi ini menyumbangkan pengaturan berikut:
+## Konfigurasi
 
-* `myExtension.enable`: Mengaktifkan/menonaktifkan ekstensi ini.
-* `myExtension.thing`: Atur ke `blah` untuk melakukan sesuatu.
+Anda dapat mengubah konfigurasi GoNotes di `settings.json`:
 
-## Masalah yang Diketahui
-
-Memanggil masalah yang diketahui dapat membantu membatasi pengguna yang membuka masalah duplikat terhadap ekstensi Anda.
-
-## Catatan Rilis
-
-Pengguna menghargai catatan rilis saat Anda memperbarui ekstensi Anda.
-
-### 1.0.0
-
-Rilis awal dari ...
-
-### 1.0.1
-
-Memperbaiki masalah #.
-
-### 1.1.0
-
-Menambahkan fitur X, Y, dan Z.
-
----
-
-## Bekerja dengan Penurunan Harga
-
-Anda dapat menulis README menggunakan Visual Studio Code.  Berikut adalah beberapa pintasan keyboard editor yang berguna:
-
-* Membagi editor (`Cmd+\` pada macOS atau `Ctrl+\` pada Windows dan Linux)
-* Beralih pratinjau (`Shift+Cmd+V` di macOS atau `Shift+Ctrl+V` di Windows dan Linux)
-* Tekan `Ctrl+Spasi` (Windows, Linux, macOS) untuk melihat daftar cuplikan penurunan harga
-
-## Untuk informasi lebih lanjut
-
-* [Dukungan Penurunan Harga Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown)
-* [Referensi Sintaks Penurunan Harga] (https://help.github.com/articles/markdown-basics/)
-
-**Selamat menikmati!
-
-Translated with DeepL.com (free version)
+```json
+{
+  "GoNotes.notesLocation": "path/to/notes",
+  "GoNotes.notesDefaultNoteExtension": "md",
+  "GoNotes.notesExtensions": "md,markdown,txt"
+}
