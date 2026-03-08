@@ -4,7 +4,7 @@
   "description": "Extensi pencatatan untuk VSCode",
   "version": "1.0.0",
   "publisher": "alhifnywahid",
-  "license": "CC-BY-NC-4.0",
+  "license": "MIT",
   "keywords": [
     "notes",
     "markdown",
